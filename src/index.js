@@ -5,6 +5,7 @@ const path = require("path");
 const fs = require("fs");
 const { ESLint } = require("eslint");
 const sourceMap = require("source-map");
+const chalk = require("chalk");
 
 function execute(command) {
   return new Promise((resolve) => {
@@ -39,11 +40,25 @@ async function main() {
 
   const sources = paths.reduce((acc, curr) => {
     const file = fs.readFileSync(curr, "utf-8");
-    acc[curr] = coffee.compile(file, {
-      sourceMap: true,
-      bare: true,
-      header: false,
-    });
+    try {
+      acc[curr] = coffee.compile(file, {
+        sourceMap: true,
+        bare: true,
+        header: false,
+      });
+    } catch (e) {
+      const { location } = e;
+      console.log(chalk.green(curr));
+      console.log(
+        [
+          `${location.first_line + 1}:${location.first_column + 1}`,
+          chalk.red("error"),
+          e.toString(),
+        ].join("\t")
+      );
+      process.exit(1);
+    }
+
     return acc;
   }, {});
 
