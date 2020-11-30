@@ -1,7 +1,7 @@
 # Coffeescript Linter 
 
 ## Required to work 
-- Create an eslint config (https://eslint.org/docs/user-guide/getting-started)
+- Create an eslint config [eslint getting started](https://eslint.org/docs/user-guide/getting-started)
 - Pipe files separated by a newline `\n` into command coffee-lint
 
 
@@ -52,4 +52,5 @@ coffee-lint
   2 errors and 4 warnings potentially fixable with the `--fix` option.
   ````
 
-## <a href="https://github.com/Airik-Leon/coffee-linter">For code review or to open a pull request visit repo here</a>
+### [For source code or PR(s) visit repo here ](https://github.com/Airik-Leon/coffee-linter)
+
