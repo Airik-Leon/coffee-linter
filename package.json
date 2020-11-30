@@ -1,13 +1,13 @@
 {
   "name": "@airikleon/coffee-lint",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Pseudo Coffeescript linter via Eslint",
   "keywords": ["coffeescript", "coffee", "eslint"],
   "main": "index.js",
   "bin": "./src/index.js",
   "author": "",
   "license": "ISC",
-  
+
   "homepage": "https://github.com/Airik-Leon/coffee-linter",
   "repository": {
      "url": "https://github.com/Airik-Leon/coffee-linter"
