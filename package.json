@@ -1,0 +1,18 @@
+{
+  "name": "@airikleon/coffee-lint",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "git status -u |  grep '**/*.coffee' | coffee-lint"
+  },
+  "bin": "./src/index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "coffeescript": "^2.5.1",
+    "eslint": "^7.14.0",
+    "rimraf": "^3.0.2",
+    "source-map": "^0.7.3"
+  }
+}
