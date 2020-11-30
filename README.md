@@ -1,7 +1,7 @@
 # Coffeescript Linter 
 
 ## Required to work 
-- Create an eslint config (https://eslint.org/)
+- Create an eslint config (https://eslint.org/docs/user-guide/getting-started)
 - Pipe files separated by a newline `\n` into command coffee-lint
 
 
