@@ -1,11 +1,8 @@
 {
   "name": "@airikleon/coffee-lint",
-  "version": "0.0.3",
-  "description": "",
+  "version": "0.0.4",
+  "description": "Pseudo Coffeescript linter via Eslint",
   "main": "index.js",
-  "scripts": {
-    "start": "git status -u |  grep '**/*.coffee' | coffee-lint"
-  },
   "bin": "./src/index.js",
   "author": "",
   "license": "ISC",
