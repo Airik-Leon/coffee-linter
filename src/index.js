@@ -110,9 +110,10 @@ async function main() {
   if (results.filter(r => r.errorCount > 0).length > 0) {
     const formatter = await eslint.loadFormatter("stylish");
     console.log(formatter.format(mappedResults));
-    await Promise.all(jsPaths.map((f) => execute(`npx rimraf ${f}`)));
     process.exit(1);
   }
+
+  await Promise.all(jsPaths.map((f) => execute(`npx rimraf ${f}`)));
   process.exit(0);
 }
 
