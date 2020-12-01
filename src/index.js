@@ -107,14 +107,16 @@ async function main() {
     };
   });
 
+  let hasErrors = false;
   if (results.filter(r => r.errorCount > 0).length > 0) {
+   hasErrors = true;
     const formatter = await eslint.loadFormatter("stylish");
     console.log(formatter.format(mappedResults));
-    process.exit(1);
+    await Promise.all(jsPaths.map((f) => execute(`npx rimraf ${f}`)));
+    process.exit(1)
   }
-
   await Promise.all(jsPaths.map((f) => execute(`npx rimraf ${f}`)));
-  process.exit(0);
+  process.exit(0)
 }
 
 main();
