@@ -107,9 +107,7 @@ async function main() {
     };
   });
 
-  let hasErrors = false;
   if (results.filter(r => r.errorCount > 0).length > 0) {
-   hasErrors = true;
     const formatter = await eslint.loadFormatter("stylish");
     console.log(formatter.format(mappedResults));
     await Promise.all(jsPaths.map((f) => execute(`npx rimraf ${f}`)));
