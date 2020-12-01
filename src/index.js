@@ -61,7 +61,6 @@ async function main() {
 
     return acc;
   }, {});
-
   await Promise.all(
     Object.entries(sources).map(async ([filePath, source]) => {
       const jsPath = filePath.replace(".coffee", ".js");
@@ -108,7 +107,7 @@ async function main() {
     };
   });
 
-  if (results.length > 0) {
+  if (results.filter(r => r.errorCount > 0).length > 0) {
     const formatter = await eslint.loadFormatter("stylish");
     console.log(formatter.format(mappedResults));
     await Promise.all(jsPaths.map((f) => execute(`npx rimraf ${f}`)));
